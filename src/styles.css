@@ -94,3 +94,52 @@
 .reward-grid .button{margin-top:14px}
 .profile-panel .profile-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
 @media(max-width:700px){.admin-quick-links{flex-direction:column}.admin-quick-links button{justify-content:center}}
+
+
+/* Ajustes guiados pelas exportações originais LoginContainer e RegisterContainer. */
+.auth-background{padding:88px 24px 90px;background:#f3f5f5}
+.auth-box{max-width:1200px;grid-template-columns:532fr 600fr;gap:70px;min-height:690px}
+.auth-form{padding:55px 53px 46px;border-radius:16px}
+.auth-form>.brand{display:none}
+.auth-form h1{font-size:27px;line-height:1.2;margin:0 0 10px;font-weight:800;letter-spacing:-.6px;color:#0b3b2c}
+.auth-form>p:not(.auth-bottom){font-size:14px;color:#536073;line-height:1.55;margin:0}
+.figma-login-form{margin-top:34px!important}
+.social-login{display:grid;gap:12px}
+.social-login button{height:48px;border-radius:8px;font-size:15px;font-weight:750;display:flex;justify-content:center;align-items:center;gap:15px;width:100%}
+.social-login .social-google{border:1px solid #dce3e7;background:white;color:#263143}
+.social-login .social-gov{background:#151421;color:white}
+.social-login button:hover{filter:brightness(.97)}
+.login-separator{display:flex;align-items:center;gap:18px;margin:30px 0;color:#536073;font-size:13px}
+.login-separator:before,.login-separator:after{content:'';height:1px;flex:1;background:#dce3e7}
+.figma-login-form>label:not(.check-label){display:block;margin:0 0 8px!important;font-size:14px!important;font-weight:700!important;color:#263143}
+.figma-login-form>label:not(.check-label) input{display:block;width:100%;height:46px;margin-top:9px;background:#f3f5f5;border:1px solid #dce3e7;border-radius:8px;padding:12px;font-size:14px}
+.login-password-label{display:flex;justify-content:space-between;align-items:center;margin:25px 0 8px}
+.login-password-label label{font-size:14px;font-weight:750;color:#263143}
+.login-password-label button{background:none;color:#10b981;font-size:13px;font-weight:700}
+.login-password-field{position:relative}
+.login-password-field input{width:100%;height:46px;background:#f3f5f5;border:1px solid #dce3e7;border-radius:8px;padding:12px 47px 12px 12px;font-size:14px}
+.login-password-field button{position:absolute;right:13px;top:0;height:100%;background:none;color:#536073;font-size:18px}
+.figma-login-form .check-label{margin:29px 0 30px;font-size:14px;color:#263143;font-weight:400}
+.figma-login-form .check-label input{width:19px;height:19px;accent-color:#10b981}
+.figma-login-form .full-width{min-height:55px;border-radius:8px;font-size:16px;font-weight:800;background:#0b3b2c}
+.auth-form>.forgot-link{display:none}
+.auth-form>.auth-bottom{font-size:14px!important;color:#536073;margin-top:18px}
+.auth-form>.auth-bottom button{font-size:14px;color:#10b981}
+.auth-art{min-height:690px;border-radius:17px;padding:54px;background:linear-gradient(0deg,rgba(5,54,39,.92),rgba(5,54,39,.80)),linear-gradient(145deg,#4c7b69,#083b2a)}
+.auth-art .brand{font-size:22px}
+.auth-art h2{font-size:37px;line-height:1.16;max-width:420px;margin-bottom:20px}
+.auth-art p{font-size:17px;line-height:1.6}
+.register-background{padding-top:72px}
+.register-intro h1{font-size:39px}
+.account-types{max-width:1050px;gap:22px;margin:43px auto 46px}
+.account-type{min-height:184px;padding:28px 29px}
+.account-type.chosen{padding:27px 28px}
+.account-type b{font-size:17px}
+.account-type small{font-size:13px}
+.register-card{max-width:595px;padding:46px 45px 50px}
+.register-card h2{font-size:20px;margin-bottom:30px}
+.register-card .register-grid{gap:20px 15px}
+.register-card .register-grid input{height:40px}
+.register-card .full-width{min-height:48px;margin-top:29px}
+@media(max-width:820px){.auth-box{grid-template-columns:1fr;gap:20px}.auth-art{min-height:360px}.auth-form{padding:35px 25px}.account-types{grid-template-columns:1fr;max-width:595px}.account-type{min-height:130px}.register-card{width:100%}}
+@media(max-width:520px){.auth-background{padding:30px 14px}.auth-art{padding:30px;min-height:300px}.auth-art h2{font-size:29px}.register-intro h1{font-size:29px}.register-card{padding:30px 20px}}
