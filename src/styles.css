@@ -48,3 +48,20 @@
 .register-card .full-width{min-height:46px;margin-top:28px}
 .register-card .auth-bottom{text-align:center}
 @media(max-width:720px){.register-background{padding:42px 16px 55px}.account-types{grid-template-columns:1fr;gap:12px;margin:26px auto}.account-type{min-height:auto}.register-card{padding:26px 20px}.register-grid{grid-template-columns:1fr}.register-grid label:first-child,.register-grid label:nth-child(4){grid-column:auto}}
+
+
+/* Figma login: two independent white/green cards on light neutral canvas. */
+.auth-background{background:#f3f5f5;min-height:calc(100vh - 78px);padding:78px 24px;display:flex;justify-content:center;align-items:flex-start}
+.auth-box{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.13fr);align-items:stretch;gap:40px;max-width:1080px;background:transparent;border-radius:0;overflow:visible;min-height:560px}
+.auth-form{padding:45px 44px;background:white;border:1px solid #e5e9e9;border-radius:15px}
+.auth-form>.brand{display:none}
+.auth-form h1{font-size:25px;letter-spacing:-.6px;margin:0 0 8px;color:#0b3b2c}
+.auth-form>p{font-size:13px;color:#536073}
+.auth-form form{margin-top:26px}
+.auth-form form label:not(.check-label){font-size:12px;font-weight:700;margin:0;gap:8px}
+.auth-form form label input:not([type=checkbox]){background:#f3f5f5;border-color:#e5e9e9;min-height:44px}
+.auth-form .full-width{min-height:46px}
+.auth-art{border-radius:15px;padding:42px;background:linear-gradient(0deg,rgba(8,57,42,.95),rgba(8,57,42,.79)),linear-gradient(135deg,#315d4d,#0b3b2c);min-height:560px}
+.auth-art h2{font-size:34px;max-width:360px}
+.auth-art p{color:#c0d6ce;max-width:380px}
+@media(max-width:720px){.auth-background{padding:35px 16px}.auth-box{grid-template-columns:1fr;gap:18px}.auth-form{padding:30px 23px}.auth-art{min-height:290px;padding:30px}}
