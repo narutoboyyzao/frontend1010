@@ -1,5 +1,4 @@
 import { LoginForm, RegistrationForm, RealPage } from './IntegratedPages'
-import {isAuthenticated} from './services/api'
 import { ExtraPage } from './ExtraPages'
 import { useState } from 'react'
 import { ArrowRight, ArrowUpRight, BarChart3, Bell, BookOpen, Check, ChevronDown, ChevronRight, CircleHelp, Download, Gift, History, Home, Leaf, LogOut, MapPin, Menu, Plus, Recycle, Search, Settings, Smartphone, TrendingUp, Trophy, User, Users, X } from 'lucide-react'
