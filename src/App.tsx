@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ArrowRight, ArrowUpRight, Award, BarChart3, Bell, BookOpen, Check, ChevronDown, ChevronRight, CircleHelp, Clock3, Download, FileText, Gift, History, Home, Leaf, LogOut, MapPin, Menu, Plus, Recycle, Search, Settings, ShieldCheck, Smartphone, Star, TrendingUp, Trophy, User, Users, X } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, BarChart3, Bell, BookOpen, Check, ChevronDown, ChevronRight, CircleHelp, Download, Gift, History, Home, Leaf, LogOut, MapPin, Menu, Plus, Recycle, Search, Settings, Smartphone, TrendingUp, Trophy, User, Users, X } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
 type Route = 'home'|'how'|'find'|'materials'|'login'|'register'|'forgot'|'dashboard'|'history'|'points'|'rewards'|'ranking'|'profile'|'admin'|'admin-points'|'admin-users'|'admin-content'|'admin-reports'|'admin-error'
