@@ -1,5 +1,6 @@
 import {useState} from 'react'
-import {MapPin,Search,Recycle,Leaf,Gift,ArrowRight,Trophy,History,Users,Building2,Check,FileText,Download,Plus,User,Settings,ShieldCheck} from 'lucide-react'
+import type {ReactNode} from 'react'
+import {MapPin,Search,Recycle,Leaf,Gift,ArrowRight,Trophy,Users,Building2,Check,FileText,Download,Plus,User,Settings,ShieldCheck} from 'lucide-react'
 type Go=(page:any)=>void
 const note=<p className="demo-notice">Prévia do Figma — informações ilustrativas. Nenhum dado foi consultado ou salvo no backend.</p>
 const metric=(Icon:any,label:string,value:string,detail:string)=><article className="metric-card"><span className="metric-icon"><Icon size={22}/></span><small>{label}</small><strong>{value}</strong><span className="metric-change">{detail}</span></article>
@@ -8,7 +9,7 @@ const rows=(heads:string[],data:string[][])=><div className="table-scroll"><tabl
 export function DemoPage({page,go}:{page:string;go:Go}){
  const [query,setQuery]=useState('');const [filter,setFilter]=useState('Todos');const [message,setMessage]=useState('')
  const search=<div className="search-input"><Search size={16}/><input aria-label="Pesquisar" placeholder="Buscar..." value={query} onChange={e=>setQuery(e.target.value)}/></div>
- const panel=(heading:string,body:React.ReactNode)=><section className="panel"><div className="panel-title"><h2>{heading}</h2></div>{body}</section>
+ const panel=(heading:string,body:ReactNode)=><section className="panel"><div className="panel-title"><h2>{heading}</h2></div>{body}</section>
  const table=(heads:string[],data:string[][])=>rows(heads,data.filter(r=>r.join(' ').toLowerCase().includes(query.toLowerCase())&&(filter==='Todos'||r.includes(filter))))
  const action=(label:string)=><button className="button button-outline" onClick={()=>setMessage(label+' estará disponível após a integração com o backend.')}>{label}</button>
  const feedback=message&&<p className="state-note" role="status">{message}</p>
