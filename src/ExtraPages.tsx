@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import {DemoPage} from './DemoPages'
 import type { ReactNode } from 'react'
 import {Search, Plus, Pencil, Trash2, Check, X, MapPin, AlertTriangle, ShieldAlert, LoaderCircle, Leaf, FileText, Building2} from 'lucide-react'
 type Go=(p:any)=>void
@@ -12,6 +13,7 @@ export function ExtraPage({page,go}:{page:string;go:Go}){
  const panel=(title:string,children:ReactNode)=><section className="panel"><h2 style={{marginBottom:20}}>{title}</h2>{notification}{children}</section>
  const table=(heads:string[],rows:string[][],actions=false)=><div className="table-scroll"><table className="data-table"><thead><tr>{heads.map(h=><th key={h}>{h}</th>)}{actions&&<th>AÇÕES</th>}</tr></thead><tbody>{rows.filter(r=>r.join(' ').toLowerCase().includes(query.toLowerCase())&&(filter==='Todos'||r.includes(filter))).map((r,i)=><tr key={i}>{r.map((c,j)=><td key={j}>{c}</td>)}{actions&&<td><button className="icon-button" title="Editar" onClick={()=>setEditing(true)}><Pencil size={15}/></button><button className="icon-button" title="Excluir" onClick={()=>inform('Exclusão pendente de integração e confirmação.') }><Trash2 size={15}/></button></td>}</tr>)}</tbody></table>{rows.length===0&&<p>Sem registros disponíveis.</p>}</div>
  const toolbar=<div className="filter-bar">{search}<select aria-label="Filtrar status" className="filter-button" value={filter} onChange={e=>setFilter(e.target.value)}><option>Todos</option><option>Ativo</option><option>Pendente</option><option>Em análise</option></select></div>
+ if(['admin-collection','admin-content','admin-reports'].includes(page))return <DemoPage page={page} go={go}/>;
  if(page==='admin-users')return panel('Gerenciamento de Usuários',<>{toolbar}{table(['NOME','PERFIL','STATUS'],demoUsers,true)}</>)
  if(page==='admin-companies')return panel('Aprovação de Novas Empresas',<><p>Solicitações de credenciamento (dados demonstrativos).</p>{toolbar}{table(['EMPRESA','LOCALIZAÇÃO','STATUS'],demoCompanies,true)}<div className="action-row"><button className="button button-outline" onClick={()=>inform('Aprovação depende de validação no backend.')}><Check size={16}/> Aprovar seleção</button><button className="button button-outline" onClick={()=>inform('Recusa depende de validação no backend.')}><X size={16}/> Recusar seleção</button></div></>)
  if(page==='admin-partners')return panel('Gestão de Empresas Parceiras',<>{toolbar}{table(['EMPRESA','LOCALIZAÇÃO','STATUS'],demoCompanies,true)}</>)
