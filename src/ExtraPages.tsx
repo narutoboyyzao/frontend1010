@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import type { ReactNode } from 'react'
 import {Search, Download, Plus, Pencil, Trash2, Check, X, MapPin, AlertTriangle, ShieldAlert, LoaderCircle, Leaf, ArrowRight, FileText, Building2, Users, BarChart3} from 'lucide-react'
 type Go=(p:any)=>void
 const demoUsers=[['Ana Silva Santos','Cidadão','Ativo'],['Carlos Mendes','Empresa','Pendente'],['Juliana Vieira','Ponto de Coleta','Ativo']]
@@ -7,7 +8,7 @@ export function ExtraPage({page,go}:{page:string;go:Go}){
  const [query,setQuery]=useState('');const [filter,setFilter]=useState('Todos');const [editing,setEditing]=useState(false);const [notice,setNotice]=useState('');const [loading,setLoading]=useState(false);
  const inform=(message:string)=>setNotice(message)
  const search=<div className="search-input"><Search size={17}/><input aria-label="Pesquisar" value={query} onChange={e=>setQuery(e.target.value)} placeholder="Buscar registros..."/></div>
- const panel=(title:string,children:React.ReactNode)=><section className="panel"><h2 style={{marginBottom:20}}>{title}</h2>{children}</section>
+ const panel=(title:string,children:ReactNode)=><section className="panel"><h2 style={{marginBottom:20}}>{title}</h2>{children}</section>
  const table=(heads:string[],rows:string[][],actions=false)=><div className="table-scroll"><table className="data-table"><thead><tr>{heads.map(h=><th key={h}>{h}</th>)}{actions&&<th>AÇÕES</th>}</tr></thead><tbody>{rows.filter(r=>r.join(' ').toLowerCase().includes(query.toLowerCase())&&(filter==='Todos'||r.includes(filter))).map((r,i)=><tr key={i}>{r.map((c,j)=><td key={j}>{c}</td>)}{actions&&<td><button className="icon-button" title="Editar" onClick={()=>setEditing(true)}><Pencil size={15}/></button><button className="icon-button" title="Excluir" onClick={()=>inform('Exclusão pendente de integração e confirmação.') }><Trash2 size={15}/></button></td>}</tr>)}</tbody></table>{rows.length===0&&<p>Sem registros disponíveis.</p>}</div>
  const toolbar=<div className="filter-bar">{search}<select aria-label="Filtrar status" className="filter-button" value={filter} onChange={e=>setFilter(e.target.value)}><option>Todos</option><option>Ativo</option><option>Pendente</option><option>Em análise</option></select></div>
  if(page==='admin-users')return panel('Gerenciamento de Usuários',<>{toolbar}{table(['NOME','PERFIL','STATUS'],demoUsers,true)}</>)
